@@ -7,17 +7,19 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
 
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class Post {
 	
 	@Id
 	@GeneratedValue
 	private Integer id;
+	
 	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

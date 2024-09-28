@@ -2,6 +2,7 @@ package com.example.userscrud.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.userscrud.entity.User;
@@ -11,15 +12,10 @@ import com.example.userscrud.repository.UserRepository;
 import lombok.AllArgsConstructor;
 
 @Service
-@AllArgsConstructor
 public class UserServiceImpl implements UserService {
 	
-	
+	@Autowired
 	private UserRepository userRepository;
-	
-	public UserServiceImpl(UserRepository repository) {
-		this.userRepository=repository;
-	}
 
 	@Override
 	public List<User> getAllUsers() {
