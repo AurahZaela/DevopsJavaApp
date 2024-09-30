@@ -1,0 +1,12 @@
+#SpringDockerfile
+FROM openjdk:17
+
+COPY userscrud-0.0.1-SNAPSHOT.jar userscrud-0.0.1-SNAPSHOT.jar
+
+CMD ["java" ,"-jar", "userscrud-0.0.1-SNAPSHOT.jar"]
+
+#MySqlDockerfile
+FROM mysql:8
+
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=users
